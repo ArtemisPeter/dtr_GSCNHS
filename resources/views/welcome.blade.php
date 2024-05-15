@@ -18,7 +18,28 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <h1>Hello </h1>
+                <button class="btn btn-primary">Import CSV</button>
+                <table class="table table-striped" id='teacherTable'>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>DateTime</td>
+                            <td>Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Neil Mark A. Luspo</td>
+                            <td>Sample DateTime</td>
+                            <td>C/in</td>
+                        </tr>
+                        <tr>
+                            <td>Another Teacher</td>
+                            <td>Sample DateTime</td>
+                            <td>C/in</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -28,6 +49,7 @@
     <script>
         $('#importC').addClass('active');
     </script>
+    <script src="resources/js/import.js"></script>
 @endsection
 
 @section('footer')
