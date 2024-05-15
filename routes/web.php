@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [AuthController::class, 'loginPage'])->name('loginPage');
+Route::get('/', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/l', [AuthController::class, 'loginPost'])->name('loginPost');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/importDtr', [importController::class, 'importDtr'])->name('importDtr');
+Route::get('/importDtr', [importController::class, 'importDtr'])->name('home')->middleware('auth');
+
+Route::get('/aboutme', function(){
+    return view('aboutMe');
+})->name('aboutMe')->middleware('auth');
 

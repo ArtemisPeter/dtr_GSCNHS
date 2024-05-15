@@ -20,10 +20,6 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        /*if(Auth::attempt($credentials)){
-            return redirect('/importDtr');
-        }
-        */
 
         $credentials = $request->only(['username', 'password']);
 
@@ -32,7 +28,11 @@ class AuthController extends Controller
         }
 
         return redirect()->back()->withErrors(['username' => 'Invalid credentials']);
+    }
 
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
     }
 
 }

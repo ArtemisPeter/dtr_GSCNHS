@@ -36,7 +36,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{route('importDtr')}}" class="nav-link">
+            <a href="{{route('home')}}" class="nav-link">
                 <i class="nav-icon fas fa-database"></i>
               <p>
                 Master Data
@@ -60,7 +60,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" id="importC" class="nav-link">
+            <a href="{{route('home')}}" id="importC" class="nav-link">
                 <i class="nav-icon fas fa-file-import"></i>
               <p>
                 Import
@@ -76,7 +76,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class='nav-link'>
+            <a href="{{route('aboutMe')}}" id='aboutMe' class='nav-link'>
                 <i class="nav-icon fas fa-info"></i>
               <p>
                 About the System
@@ -84,7 +84,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class='nav-link'>
+            <a href="{{route('logout')}}" class='nav-link'>
             <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Log out
