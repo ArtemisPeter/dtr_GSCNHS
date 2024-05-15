@@ -20,4 +20,9 @@ class Teacher extends Model
     public function account(){
         return $this->hasOne(Account::class, 'teacher_id');
     }
+
+    public function dtr(){
+        return $this->belongsTo(Dtr::class, 'teacher_id');
+    }
+
 }

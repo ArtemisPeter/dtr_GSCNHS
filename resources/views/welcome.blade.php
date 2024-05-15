@@ -18,7 +18,7 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <button class="btn btn-primary">Import CSV</button>
+                <button class="btn btn-primary mb-3">Import CSV</button>
                 <table class="table table-striped" id='teacherTable'>
                     <thead>
                         <tr>
@@ -28,16 +28,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Neil Mark A. Luspo</td>
-                            <td>Sample DateTime</td>
-                            <td>C/in</td>
-                        </tr>
-                        <tr>
-                            <td>Another Teacher</td>
-                            <td>Sample DateTime</td>
-                            <td>C/in</td>
-                        </tr>
+                        @foreach ($dtrs as $dtr)
+                            <tr>
+                                <td>{{$dtr->teacherName->fname.' '.$dtr->teacherName->lname}}</td>
+                                <td>{{$dtr->recordedTime}}</td>
+                                <td>{{$dtr->state->state}}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
