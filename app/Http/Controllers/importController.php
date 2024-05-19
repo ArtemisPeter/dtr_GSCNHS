@@ -9,7 +9,8 @@ class importController extends Controller
 {
     public function importDtr(){
 
-        $dtrs = Dtr::with('state')->get();
+        $dtrs = Dtr::with('state', 'teacherName')->get();
+
         return view('welcome', [
             'dtrs' => $dtrs
         ]);

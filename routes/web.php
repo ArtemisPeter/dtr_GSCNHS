@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\importController;
+use App\Http\Controllers\importCsv;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::post('/l', [AuthController::class, 'loginPost'])->name('loginPost');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/importDtr', [importController::class, 'importDtr'])->name('home')->middleware('auth');
+Route::post('/importCsv', [importCsv::class, 'importCsv'])->name('importCsv')->middleware('auth');
 
 Route::get('/aboutme', function(){
     return view('aboutMe');

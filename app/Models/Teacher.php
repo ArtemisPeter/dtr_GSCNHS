@@ -22,7 +22,7 @@ class Teacher extends Model
     }
 
     public function dtr(){
-        return $this->belongsTo(Dtr::class, 'teacher_id');
+        return $this->hasMany(Dtr::class, 'teacher_id');
     }
 
 }
