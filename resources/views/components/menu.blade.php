@@ -35,8 +35,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="{{route('home')}}" class="nav-link">
+          <li class="nav-item " id="master">
+            <a href="{{route('home')}}" class="nav-link ">
                 <i class="nav-icon fas fa-database"></i>
               <p>
                 Master Data
@@ -45,7 +45,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{route('teacherv')}}" id="teacher" class="nav-link ">
                     <i class="nav-icon fas fa-chalkboard-teacher"></i>
                     <p>Teacher</p>
                 </a>

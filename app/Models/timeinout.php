@@ -15,4 +15,7 @@ class timeinout extends Model
         'timeIn_Afternoon',
         'timeOut_Afternoon'
     ];
+
+
+
 }

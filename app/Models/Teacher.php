@@ -25,4 +25,8 @@ class Teacher extends Model
         return $this->hasMany(Dtr::class, 'teacher_id');
     }
 
+    public function teacherOfficialTime(){
+        return $this->belongsTo(timeinout::class, 'timeInOut_id');
+    }
+
 }
