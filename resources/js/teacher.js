@@ -23,11 +23,13 @@ $(document).ready(()=>{
         $('#TeacherFname').val($fname);
         $('#TeacherLname').val($lname);
         $('#officeHours').val(data[1]);
-
+        $('#teacher_Id').val(data[3]);
 
     })
 
     $('#closeBtn').on('click', ()=>{
         $('#updateModal').modal('hide');
     })
+
+
 })

@@ -29,6 +29,7 @@ Route::get('/importDtr', [importController::class, 'importDtr'])->name('home')->
 Route::post('/importCsv', [importCsv::class, 'importCsv'])->name('importCsv')->middleware('auth');
 
 Route::get('/Teacher', [TeacherController::class, 'teacherView'])->name('teacherv')->middleware('auth');
+Route::put('/Teacher/update', [TeacherController::class, 'teacherUpdate'])->name('teacherUp')->middleware('auth');
 
 Route::get('/aboutme', function(){
     return view('aboutMe');

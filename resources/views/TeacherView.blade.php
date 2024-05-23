@@ -15,7 +15,7 @@
 @section('contentInfo', 'Master Data / Teacher')
 
 @section('content')
-    <div class="card">
+    <div class="card border border-success">
         <div class="card-body">
             <table class="table table-hover" id="teacherTable">
                 <thead>
@@ -42,18 +42,22 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <div class="modal fade" id="updateModal" role="dialog" aria-labelledby="updateModal" aria-hidden="true" data-backdrop="static" data-keyboard="false" tabindex="-1" >
         <div class="modal-dialog modal-dialog-centered"role="document">
             <input type = "hidden" name="update_id" id="update_id">
             <div class="modal-content" >
-                <div class="modal-header d-flex justify-content-center"style="border-bottom: 1px solid green">
-                    <h4 id="namez"></h4>
-                    <div class="d-none" id="teacherid"></div>
+                <div class="modal-header d-flex justify-content-center bg-success">
+                    <h2 id="namez"></h2>
+
                 </div>
-                <form id="updateInfo">
+                <form id="updateInfo" method="POST" action="{{route('teacherUp')}}">
+                    @csrf
+                    @method('PUT')
                 <div class="modal-body">
+                    <input class="d-none" id="teacher_Id" name="teacher_Id"></input>
                 <div class="alert alert-danger d-none" id='alert' role="alert">
 
     </div>
@@ -66,14 +70,16 @@
                         <label for="firstName">Last Name</label>
                         <input type="text" class="form-control" id="TeacherLname" name="TeacherLname">
                       </div>
+
                   </div>
+
 
                   <div class="row mt-2">
                     <div class="col-12">
                       <label for ="contactNum">Office Hours</label>
-                        <select class="form-select" id="officeHours">
+                        <select class="form-select" id="officeHours" name="officeHours">
                             @foreach ($OfficialTimes as $ot)
-                                <option>{{$ot->timeIn_Morning.' - '.$ot->timeOut_Morning.' | '.$ot->timeIn_Afternoon.' - '.$ot->timeOut_Afternoon}}</option>
+                                <option value="{{$ot->id}}">{{$ot->timeIn_Morning.' - '.$ot->timeOut_Morning.' | '.$ot->timeIn_Afternoon.' - '.$ot->timeOut_Afternoon}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -82,8 +88,21 @@
                 <div class="modal-footer">
                     <button type="button" id="closeBtn" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-success">Save</button>
-                    </form>
+
+
                 </div>
+
+                @if (session('success'))
+                    <div class="card-footer bg-success">
+                        {{session('success')}}
+                    </div>
+                @endif
+                @if(session('error'))
+                    <div class="card-footer bg-danger">
+                        {{session('error')}}
+                    </div>
+                @endif
+                </form>
             </div>
         </div>
 

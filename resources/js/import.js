@@ -6,11 +6,6 @@ $(document).ready(()=>{
 
 
 
-    $('#dtr_import').submit((e)=>{
-        alert('hey');
-        e.preventDefault();
-    })
-
 
 
 })
